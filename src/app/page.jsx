@@ -1,6 +1,9 @@
+
+
 export default function Home() {
   return (
-    <form>
+  
+    <form className='af-calc__form'>
       This is a form.
     </form>
   )
