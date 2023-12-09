@@ -10,7 +10,7 @@ export default function Home() {
 	return (
 		<Card>
 			<form className='af-calc__form'>
-				<div>
+				<div className='flex-column af-calc__oven-container'>
 					<Row boxType='grid'>
 						<Heading label='Conventional Oven' />
 						<InputUnit />

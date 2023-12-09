@@ -12,19 +12,19 @@
 html {
 	font-size: 62.5%;
 	overflow-x: hidden;
-	// overflow-wrap: break-word;
+	overflow-wrap: break-word;
 
-	// @include abstracts.respond(tab-landscape) {
-	// 	font-size: 56.25%;
-	// }
+	@include abstracts.respond(tab-landscape) {
+		font-size: 56.25%;
+	}
 
-	// @include abstracts.respond(tab-portrait) {
-	// 	font-size: 50%;
-	// }
+	@include abstracts.respond(tab-portrait) {
+		font-size: 50%;
+	}
 
-	// @include abstracts.respond(big-desktop) {
-	// 	font-size: 75%;
-	// }
+	@include abstracts.respond(big-desktop) {
+		font-size: 75%;
+	}
 }
 
 body {

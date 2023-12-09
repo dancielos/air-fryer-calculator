@@ -17,6 +17,12 @@
 	transform: translate(-50%, -50%);
 }
 
+@mixin absoluteCenterY {
+	position: absolute;
+	top: 50%;
+	transform: translateY(-50%);
+}
+
 @mixin addBorderRadius {
 	border-radius: variables.$defaultBorderRadius;
 }

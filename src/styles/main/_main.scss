@@ -29,4 +29,10 @@
 		display: flex;
 		align-items: center;
 	}
+	&__oven-container {
+		gap: 1.2rem;
+		div:first-child {
+			padding-bottom: 1.6rem;
+		}
+	}
 }
