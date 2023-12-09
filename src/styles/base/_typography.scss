@@ -1,0 +1,86 @@
+@use '../abstracts';
+
+body {
+	line-height: 1;
+	font-weight: abstracts.$defaultFontWeight;
+	letter-spacing: 0.5px;
+	font-size: abstracts.$defaultFontSize;
+	color: abstracts.$color4;
+}
+
+h1,
+h2,
+h3,
+h4 {
+	// color: abstracts.$color2;
+	font-weight: abstracts.$boldFontWeight;
+}
+
+p strong,
+.link:link,
+.link:visited {
+	color: abstracts.$color2;
+
+	font-weight: abstracts.$boldFontWeight;
+	// background-color: red;
+	background-image: linear-gradient(transparent 50%, abstracts.$color2 50%);
+	background-size: auto 200%;
+	background-position-y: 10%;
+	text-decoration: none;
+	transition: abstracts.$defaultTransitionDuration;
+}
+
+.link:hover,
+.link:active {
+	color: abstracts.$color5;
+	background-size: auto 200%;
+	background-position-y: 100%;
+}
+
+h2 {
+	font-size: 5.2rem;
+	// margin-bottom: 2.4rem;
+	@include abstracts.respond(phone) {
+		font-size: 4.4rem;
+	}
+}
+
+h3 {
+	font-size: 3.6rem;
+	// margin-bottom: 1.2rem;
+	line-height: 1.4;
+}
+
+h4 {
+	font-size: 2.4rem;
+	// margin-bottom: 0.8rem;
+}
+
+p,
+label,
+button,
+input,
+li,
+a {
+	font-size: abstracts.$defaultFontSize;
+	font-weight: abstracts.$mediumFontWeight;
+	line-height: 1.8;
+}
+p {
+	margin-bottom: 2rem;
+	@include abstracts.respond(phone) {
+		margin-bottom: 1.2rem;
+	}
+}
+
+a:link,
+a:visited {
+	text-decoration: none;
+	color: abstracts.$color0;
+	transition: abstracts.$defaultTransitionDuration;
+}
+
+a:hover,
+a:active {
+	text-decoration: underline;
+}

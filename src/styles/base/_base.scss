@@ -1,0 +1,67 @@
+@use '../abstracts';
+
+*,
+*::after,
+*::before {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+	scroll-behavior: smooth;
+}
+
+html {
+	font-size: 62.5%;
+	overflow-x: hidden;
+	// overflow-wrap: break-word;
+
+	// @include abstracts.respond(tab-landscape) {
+	// 	font-size: 56.25%;
+	// }
+
+	// @include abstracts.respond(tab-portrait) {
+	// 	font-size: 50%;
+	// }
+
+	// @include abstracts.respond(big-desktop) {
+	// 	font-size: 75%;
+	// }
+}
+
+body {
+	color: abstracts.$color1;
+	background-color: abstracts.$color5;
+	overflow-x: hidden;
+}
+
+::selection {
+	background-color: abstracts.$color0;
+	color: abstracts.$color2;
+}
+
+:focus-visible {
+	outline: none;
+	/* outline: 4px dotted #e67e22; */
+	box-shadow: 0 0 0.1rem 0.3rem abstracts.$color0;
+}
+
+input:focus-visible,
+textarea:focus-visible {
+	box-shadow: none;
+}
+
+.hidden {
+	display: none;
+}
+
+.grid-justify-right {
+	justify-self: flex-end;
+}
+
+.flex-column {
+	display: flex;
+	flex-direction: column;
+}
+
+.grid-span-end {
+	grid-column: 1 / -1;
+}

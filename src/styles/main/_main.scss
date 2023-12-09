@@ -1,3 +1,32 @@
-form {
-  color: red;
+@use '../abstracts';
+
+.af-calc {
+	&__card {
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		justify-content: center;
+		padding: 0 1.2rem 2.4rem;
+		width: fit-content;
+		margin: 3.2rem auto;
+		box-shadow: abstracts.$defaultShadow;
+		background-color: abstracts.$color6;
+		@include abstracts.addBorderRadius();
+	}
+	&__form {
+		display: flex;
+		flex-direction: column;
+		gap: 3.2rem;
+		padding: 2.4rem;
+		width: fit-content;
+	}
+	&__grid {
+		display: grid;
+		grid-template-columns: 1fr 1fr;
+		align-items: center;
+	}
+	&__flex {
+		display: flex;
+		align-items: center;
+	}
 }

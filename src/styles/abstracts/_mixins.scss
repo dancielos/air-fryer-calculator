@@ -1,0 +1,61 @@
+@use './variables';
+
+@mixin flex-row-center($gap: 0) {
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+	justify-content: center;
+	@if $gap {
+		gap: $gap;
+	}
+}
+
+@mixin absoluteCenter {
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+}
+
+@mixin addBorderRadius {
+	border-radius: variables.$defaultBorderRadius;
+}
+
+@mixin respond($breakpoint) {
+	@if $breakpoint == custom-450 {
+		@media only screen and (max-width: 28.125em) {
+			@content; // 450px
+		}
+	}
+	@if $breakpoint == phone {
+		@media only screen and (max-width: 37.5em) {
+			@content; // 600px
+		}
+	}
+	@if $breakpoint == custom-780 {
+		@media only screen and (max-width: 48.75em) {
+			@content; //780px
+		}
+	}
+	@if $breakpoint == tab-portrait {
+		@media only screen and (max-width: 56.25em) {
+			@content; //900px
+		}
+	}
+	@if $breakpoint == tab-landscape {
+		@media only screen and (max-width: 75em) {
+			@content; //1200px
+		}
+	}
+	@if $breakpoint == big-desktop {
+		@media only screen and (min-width: 112.5em) {
+			@content; //1800px
+		}
+	}
+}
+
+@mixin hide-on-mobile {
+	@media only screen and (max-width: 37.5em) {
+		display: none;
+	}
+}
