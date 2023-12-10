@@ -25,8 +25,8 @@ export default function InputUnit({
 				/>
 				<label
 					className='af-calc__btn-unit-switch-inner'
-					data-off='ºF'
-					data-on='ºC'
+					data-off='ºC'
+					data-on='ºF'
 					htmlFor={id}
 				></label>
 			</label>

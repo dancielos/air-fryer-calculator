@@ -10,19 +10,44 @@ import InputDuration from './components/InputDuration';
 import InputUnit from './components/InputUnit';
 import Output from './components/Output';
 import Slider from './components/Slider';
+import { convertTemp } from './utils';
 
 export default function Home() {
 	const [tempUnit, setTempUnit] = useState({ oven: 'F', airFryer: 'F' });
+	const [inputs, setInputs] = useState({
+		temp: 350,
+		formattedTemp: 350,
+		hours: 0,
+		minutes: 20,
+	});
 
 	function onUnitChange(id, isChecked) {
 		// console.log(id, value);
+		const unit = isChecked ? 'F' : 'C';
 		setTempUnit((prevTempUnit) => {
-			const unit = isChecked ? 'F' : 'C';
 			return { ...prevTempUnit, [id]: unit };
+		});
+
+		//C to F
+		const { realResult, formattedResult } = convertTemp(unit, inputs.temp);
+
+		setInputs((prevInput) => {
+			return { ...prevInput, formattedTemp: formattedResult, temp: realResult };
 		});
 	}
 
-	// console.log(tempUnit);
+	function onTempChange(value) {
+		setInputs((prevInput) => {
+			return { ...prevInput, temp: +value, formattedTemp: +value };
+		});
+	}
+
+	function onDurationChange(hours, minutes) {
+		console.log(+hours, +minutes);
+		setInputs((prevInput) => {
+			return { ...prevInput, hours: +hours, minutes: +minutes };
+		});
+	}
 
 	return (
 		<Card>
@@ -41,8 +66,16 @@ export default function Home() {
 							type='range'
 							label='Temperature'
 							id='af-calc__temperature'
+							unit={tempUnit.oven}
+							onTempChange={onTempChange}
+							value={inputs.temp}
+							formattedValue={inputs.formattedTemp}
 						/>
-						<InputDuration />
+						<InputDuration
+							onDurationChange={onDurationChange}
+							hours={inputs.hours}
+							minutes={inputs.minutes}
+						/>
 					</InputGroup>
 				</div>
 

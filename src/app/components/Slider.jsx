@@ -1,6 +1,27 @@
-import InputGroup from '../UI/InputGroup';
+// import InputGroup from '../UI/InputGroup';
 
-export default function Slider({ label, type, id }) {
+export default function Slider({
+	label,
+	id,
+	unit,
+	onTempChange,
+	value,
+	formattedValue,
+}) {
+	let min, max, step;
+	if (unit === 'F') {
+		min = 175;
+		max = 500;
+		step = 25;
+		// value = 350;
+	} else {
+		min = 75;
+		max = 270;
+		step = 15;
+	}
+	function handleOnTempChange(e) {
+		onTempChange(e.target.value);
+	}
 	return (
 		<>
 			<label htmlFor={id}>{label}</label>
@@ -8,12 +29,13 @@ export default function Slider({ label, type, id }) {
 				<input
 					className='af-calc__slider'
 					type='range'
-					// value='250'
-					min='170'
-					max='500'
-					step='25'
+					value={value}
+					min={min}
+					max={max}
+					step={step}
+					onChange={handleOnTempChange}
 				/>
-				<span className='af-calc__slider-value '>0</span>
+				<span className='af-calc__slider-value '>{`${formattedValue}º${unit}`}</span>
 			</div>
 		</>
 	);

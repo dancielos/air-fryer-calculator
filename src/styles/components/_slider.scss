@@ -1,9 +1,9 @@
 @use '../abstracts';
-$range-label-width: 60px !default;
+$range-label-width: 10rem !default;
 
 .af-calc__slider {
 	-webkit-appearance: none;
-	width: calc(100% - (#{$range-label-width + 13px}));
+	width: calc(100% - (#{$range-label-width + 1.3rem}));
 	height: 1rem;
 	border-radius: 5px;
 	background: abstracts.$color4;
@@ -63,6 +63,7 @@ $range-label-width: 60px !default;
 // Range Label
 .af-calc__slider-value {
 	display: inline-block;
+
 	position: relative;
 	width: $range-label-width;
 	color: abstracts.$color5;
