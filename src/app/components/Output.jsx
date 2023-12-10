@@ -1,6 +1,6 @@
 import InputGroup from '../UI/InputGroup';
 
-export default function Output({ label }) {
+export default function Output({ unit, label, value }) {
 	return (
 		<div className='flex-column af-calc__output-group'>
 			<label>{label}</label>
@@ -8,7 +8,7 @@ export default function Output({ label }) {
 				className='af-calc__output-value'
 				type='text'
 				disabled
-				value='400'
+				value={value}
 			/>
 		</div>
 	);

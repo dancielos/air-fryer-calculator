@@ -1,0 +1,21 @@
+@use '../abstracts';
+
+.error-message {
+	font-size: 1.6rem;
+	// color: #ff1500;
+	color: abstracts.$color4;
+	background-color: #f44336;
+	width: fit-content;
+	padding: 0.6rem 1.2rem;
+	border-radius: 5px;
+	max-width: 70rem;
+	line-height: 1.2;
+	// font-weight: 400;
+	transition: abstracts.$defaultTransitionDuration;
+	// display: flex;
+	// align-self: flex-end;
+	&.hide {
+		// opacity: 0;
+		display: none;
+	}
+}
