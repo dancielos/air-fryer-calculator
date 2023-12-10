@@ -27,13 +27,19 @@ export default function Home() {
 		setTempUnit((prevTempUnit) => {
 			return { ...prevTempUnit, [id]: unit };
 		});
+		if (id === 'oven') {
+			//C to F
+			const { realResult, formattedResult } = convertTemp(unit, inputs.temp);
 
-		//C to F
-		const { realResult, formattedResult } = convertTemp(unit, inputs.temp);
-
-		setInputs((prevInput) => {
-			return { ...prevInput, formattedTemp: formattedResult, temp: realResult };
-		});
+			setInputs((prevInput) => {
+				return {
+					...prevInput,
+					formattedTemp: formattedResult,
+					temp: realResult,
+				};
+			});
+		} else {
+		}
 	}
 
 	function onTempChange(value) {
