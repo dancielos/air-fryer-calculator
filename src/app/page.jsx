@@ -1,7 +1,7 @@
 // import '@/styles/styles.scss';
 'use client';
 
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import Card from './UI/Card';
 import Heading from './UI/Heading';
 import InputGroup from './UI/InputGroup';
@@ -38,6 +38,15 @@ export default function Home() {
 	});
 
 	const [error, setError] = useState(null);
+	let errorTimer;
+
+	useEffect(() => {
+		errorTimer = setTimeout(() => {
+			setError(null);
+		}, 5000);
+		// errorTimer();
+		// return
+	}, [error]);
 
 	function onUnitChange(id, isChecked) {
 		// console.log(id, value);
@@ -107,9 +116,8 @@ export default function Home() {
 			return;
 		}
 		setError(null);
-		// clearTimeout(errorTimer);
+		clearTimeout(errorTimer);
 
-		// console.log(+hours, +minutes);
 		setInputs((prevInput) => {
 			return { ...prevInput, hours: +hours, minutes: +minutes };
 		});
