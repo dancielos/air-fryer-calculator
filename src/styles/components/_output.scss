@@ -1,0 +1,22 @@
+@use '../abstracts';
+
+.af-calc__output {
+	// gap: 2.4rem;
+
+	&-container {
+		display: flex;
+		flex-direction: column;
+		gap: 1.2rem;
+	}
+	&-value {
+		max-width: 32rem;
+		text-align: center;
+		color: abstracts.$color1;
+		font-size: 3.2rem;
+	}
+
+	&-group {
+		justify-items: center;
+		align-items: center;
+	}
+}

@@ -1,11 +1,14 @@
+import Input from '../UI/Input';
 import InputGroup from '../UI/InputGroup';
 
 export default function InputDuration({}) {
 	return (
-		<InputGroup>
+		<>
 			<label>Duration</label>
-			<input type='number' />
-			<input type='number' />
-		</InputGroup>
+			<div className='af-calc__input-wrapper input-duration'>
+				<Input label='hours' />
+				<Input label='minutes' />
+			</div>
+		</>
 	);
 }

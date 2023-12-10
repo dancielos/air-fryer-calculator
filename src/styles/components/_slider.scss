@@ -1,0 +1,98 @@
+@use '../abstracts';
+$range-label-width: 60px !default;
+
+.af-calc__slider {
+	-webkit-appearance: none;
+	width: calc(100% - (#{$range-label-width + 13px}));
+	height: 1rem;
+	border-radius: 5px;
+	background: abstracts.$color4;
+	outline: none;
+	padding: 0;
+	margin: 0;
+
+	&-container {
+		width: 100%;
+	}
+
+	// Range Handle
+	&::-webkit-slider-thumb {
+		appearance: none;
+		width: 2rem;
+		height: 2rem;
+		border-radius: 50%;
+		background: abstracts.$color1;
+		cursor: pointer;
+		transition: background 0.15s ease-in-out;
+
+		&:hover {
+			background: abstracts.$color0;
+		}
+	}
+
+	&:active::-webkit-slider-thumb {
+		background: abstracts.$color0;
+	}
+
+	&::-moz-range-thumb {
+		width: 2rem;
+		height: 2rem;
+		border: 0;
+		border-radius: 50%;
+		background: abstracts.$color1;
+		cursor: pointer;
+		transition: background 0.15s ease-in-out;
+
+		&:hover {
+			background: abstracts.$color0;
+		}
+	}
+
+	&:active::-moz-range-thumb {
+		background: abstracts.$color0;
+	}
+
+	// Focus state
+	&:focus {
+		&::-webkit-slider-thumb {
+			box-shadow: 0 0 0 3px abstracts.$color5, 0 0 0 6px abstracts.$color0;
+		}
+	}
+}
+
+// Range Label
+.af-calc__slider-value {
+	display: inline-block;
+	position: relative;
+	width: $range-label-width;
+	color: abstracts.$color5;
+	line-height: 20px;
+	text-align: center;
+	border-radius: 3px;
+	background: abstracts.$color1;
+	padding: 5px 10px;
+	margin-left: 8px;
+
+	&:after {
+		position: absolute;
+		top: 8px;
+		left: -7px;
+		width: 0;
+		height: 0;
+		border-top: 7px solid transparent;
+		border-right: 7px solid abstracts.$color1;
+		border-bottom: 7px solid transparent;
+		content: '';
+	}
+}
+
+// Firefox Overrides
+::-moz-range-track {
+	background: abstracts.$color4;
+	border: 0;
+}
+
+input::-moz-focus-inner,
+input::-moz-focus-outer {
+	border: 0;
+}
