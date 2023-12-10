@@ -10,6 +10,10 @@
 	font-size: 1.6rem;
 	z-index: 1000;
 	width: 16rem;
+	@include abstracts.respond(custom-450) {
+		width: 100%;
+		font-size: 2rem;
+	}
 
 	&-wrapper {
 		display: flex;
@@ -19,6 +23,10 @@
 	}
 	&-wrapper.input-duration {
 		gap: 2.4rem;
+		@include abstracts.respond(custom-450) {
+			width: 100%;
+			gap: 1.2rem;
+		}
 	}
 	&-container {
 		position: relative;
@@ -26,6 +34,9 @@
 		border: 1.5px solid abstracts.$color1;
 		border-radius: abstracts.$defaultBorderRadius;
 		// margin: 10px;
+		@include abstracts.respond(custom-450) {
+			width: 100%;
+		}
 	}
 	&-group {
 		display: grid;
@@ -33,9 +44,18 @@
 		grid-template-columns: auto 1fr 1fr;
 		// row-gap: 2.4rem;
 		justify-items: stretch;
-		// > label {
-		// 	width: calc(100% + 1rem);
-		// }
+
+		@include abstracts.respond(custom-450) {
+			grid-template-columns: 1fr;
+			justify-items: center;
+			gap: 0rem;
+			> label {
+				margin: 1.2rem auto;
+				&:first-child {
+					margin-bottom: 0;
+				}
+			}
+		}
 	}
 	&-label {
 		font-size: 1.4rem;

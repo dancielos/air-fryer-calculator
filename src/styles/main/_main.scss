@@ -12,6 +12,10 @@
 		box-shadow: abstracts.$defaultShadow;
 		background-color: abstracts.$color6;
 		@include abstracts.addBorderRadius();
+		@include abstracts.respond(custom-450) {
+			width: 95%;
+			margin: 0.8rem auto;
+		}
 	}
 	&__form {
 		display: flex;
@@ -19,6 +23,11 @@
 		gap: 3.2rem;
 		padding: 2.4rem;
 		width: fit-content;
+		@include abstracts.respond(custom-450) {
+			width: 100%;
+			padding: 2.4rem 0.8rem;
+			gap: 1.8rem;
+		}
 	}
 	&__grid {
 		display: grid;
@@ -31,8 +40,19 @@
 	}
 	&__oven-container {
 		gap: 2.4rem;
+		@include abstracts.respond(custom-450) {
+			gap: 1.2rem;
+		}
 		// div:first-child {
 		// 	padding-bottom: 1.6rem;
 		// }
+	}
+	&__top {
+		grid-template-columns: auto 1fr;
+		@include abstracts.respond(custom-450) {
+			grid-template-columns: 1fr;
+			gap: 1.2rem;
+			text-align: center;
+		}
 	}
 }

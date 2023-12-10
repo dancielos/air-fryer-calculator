@@ -4,6 +4,9 @@
 	&-container {
 		display: flex;
 		justify-content: flex-end;
+		@include abstracts.respond(custom-450) {
+			justify-content: center;
+		}
 	}
 	&-unit-switch {
 		display: inline-block;

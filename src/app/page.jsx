@@ -136,7 +136,7 @@ export default function Home() {
 		<Card>
 			<form className='af-calc__form'>
 				<div className='flex-column af-calc__oven-container'>
-					<Row boxType='grid'>
+					<Row boxType='grid' className='af-calc__top'>
 						<Heading label='Conventional Oven' />
 						<InputUnit
 							id='oven'
@@ -166,7 +166,7 @@ export default function Home() {
 
 				<hr />
 				<div className='af-calc__output-container'>
-					<Row boxType='grid'>
+					<Row boxType='grid' className='af-calc__top'>
 						<Heading label='Air Fryer' />
 						<InputUnit
 							id='airFryer'

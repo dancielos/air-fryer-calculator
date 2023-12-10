@@ -1,7 +1,11 @@
 @use '../abstracts';
 
 .af-calc__output {
-	// gap: 2.4rem;
+	gap: 2.4rem;
+	@include abstracts.respond(custom-450) {
+		grid-template-columns: 1fr;
+		gap: 1.2rem;
+	}
 
 	&-container {
 		display: flex;
@@ -13,6 +17,10 @@
 		text-align: center;
 		color: abstracts.$color1;
 		font-size: 3.2rem;
+		@include abstracts.respond(phone) {
+			font-size: 2.4rem;
+			max-width: 24rem;
+		}
 	}
 
 	&-group {
